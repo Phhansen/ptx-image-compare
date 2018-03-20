@@ -44,5 +44,4 @@ Variables:
 ```css
     --compare-primary-color: #366dc4;
     --compare-secondary-color: #ffffff;
-    --compare-divider-width: 3px;
 ```

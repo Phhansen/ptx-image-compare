@@ -90,7 +90,7 @@ export class FitImageCompare {
       const containerOffset = this.el.offsetLeft;
       const containerWidth = this.el.offsetWidth;
       const minLeft = containerOffset;
-      const maxLeft = containerOffset + containerWidth - 2;
+      const maxLeft = containerOffset + containerWidth;
 
       const moveSlider = (event: Event) => {
         if ( !this.isTouched ) {
@@ -99,12 +99,12 @@ export class FitImageCompare {
         let pageX = this.getPageX(event);
 
         if (pageX !== false) {
-          let leftValue = pageX + posX - handleWidth + 2;
+          let leftValue = pageX + posX - handleWidth + 1;
 
           if (pageX < minLeft) {
             leftValue = -(handleWidth / 2) + 3;
           } else if (pageX > maxLeft) {
-            leftValue = containerWidth - handleWidth / 2 + 2;
+            leftValue = containerWidth - handleWidth / 2 + 1;
           }
 
           moveWidth = (leftValue + handleWidth / 2) * 100 / this.el.offsetWidth + "%";
