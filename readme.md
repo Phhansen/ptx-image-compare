@@ -30,7 +30,7 @@ Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-compone
 
 Preview
 
-![Preview](https://giphy.com/gifs/2w4NSDd4GGmjR6K2RX/giphy.gif)
+![Preview](https://media.giphy.com/media/2w4NSDd4GGmjR6K2RX/giphy.gif)
 
 ```html
 <fit-image-compare original="path/to/original-image.png" modified="path/to/modified-image.png"></fit-image-compare>
