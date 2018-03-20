@@ -1,6 +1,6 @@
 {
   "name": "fit-image-compare",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Image comparison slider component",
   "main": "dist/fit-image-compare.js",
   "types": "dist/types/index.d.ts",
