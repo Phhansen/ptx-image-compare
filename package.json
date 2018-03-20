@@ -31,12 +31,12 @@
     "type": "git",
     "url": "git+https://github.com/Phhansen/fit-image-compare"
   },
-  "author": "Ionic Team",
+  "author": "Poul H. Hansen <poul.h.hansen@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/Phhansen/fit-image-compare"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/Phhansen/fit-image-compare",
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
