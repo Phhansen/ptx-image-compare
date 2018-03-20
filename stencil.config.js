@@ -3,8 +3,8 @@ exports.config = {
   outputTargets: [
     {
       type: "dist",
-      serviceWorker: false
-    }
+      serviceWorker: false,
+    },
   ]
 };
 
