@@ -1,11 +1,14 @@
 exports.config = {
-  namespace: 'fitui',
-  generateDistribution: true,
-  generateWWW: false,
-  serviceWorker: false,
+  namespace: "fitui",
+  outputTargets: [
+    {
+      type: "dist",
+      serviceWorker: false
+    }
+  ]
 };
 
 exports.devServer = {
-  root: 'www',
-  watchGlob: '**/**'
-}
+  root: "www",
+  watchGlob: "**/**"
+};
