@@ -2,13 +2,13 @@
   "name": "fit-image-compare",
   "version": "0.1.7",
   "description": "Image comparison slider component",
-  "main": "dist/fitui.js",
+  "main": "dist/fit-image-compare.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
-  "browser": "dist/fitui.js",
+  "browser": "dist/fit-image-compare.js",
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@stencil/core": "0.7.1",
+    "@stencil/postcss": "0.0.4",
+    "autoprefixer": "^8.1.0",
     "semver": "^5.5.0"
   },
   "devDependencies": {
