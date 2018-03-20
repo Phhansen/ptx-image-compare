@@ -1,7 +1,9 @@
 exports.config = {
-  namespace: 'nixui',
+  namespace: 'fitui',
   generateDistribution: true,
-  serviceWorker: false
+  generateWWW: false,
+  serviceWorker: false,
+  globalStyle: "src/global/variables.css"
 };
 
 exports.devServer = {

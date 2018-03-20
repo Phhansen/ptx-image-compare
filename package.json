@@ -1,14 +1,14 @@
 {
-  "name": "nxt-image-compare",
+  "name": "fit-image-compare",
   "version": "0.0.1",
   "description": "Image comparison slider component",
-  "main": "dist/nixui.js",
+  "main": "dist/fitui.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
-  "browser": "dist/nixui.js",
+  "browser": "dist/fitui.js",
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",

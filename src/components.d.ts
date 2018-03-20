@@ -20,29 +20,29 @@ declare global {
 
 
 import {
-  NxtImageCompare as NxtImageCompare
-} from './components/nxt-image-compare/nxt-image-compare';
+  FitImageCompare as FitImageCompare
+} from './components/fit-image-compare/fit-image-compare';
 
 declare global {
-  interface HTMLNxtImageCompareElement extends NxtImageCompare, HTMLStencilElement {
+  interface HTMLFitImageCompareElement extends FitImageCompare, HTMLStencilElement {
   }
-  var HTMLNxtImageCompareElement: {
-    prototype: HTMLNxtImageCompareElement;
-    new (): HTMLNxtImageCompareElement;
+  var HTMLFitImageCompareElement: {
+    prototype: HTMLFitImageCompareElement;
+    new (): HTMLFitImageCompareElement;
   };
   interface HTMLElementTagNameMap {
-    "nxt-image-compare": HTMLNxtImageCompareElement;
+    "fit-image-compare": HTMLFitImageCompareElement;
   }
   interface ElementTagNameMap {
-    "nxt-image-compare": HTMLNxtImageCompareElement;
+    "fit-image-compare": HTMLFitImageCompareElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "nxt-image-compare": JSXElements.NxtImageCompareAttributes;
+      "fit-image-compare": JSXElements.FitImageCompareAttributes;
     }
   }
   namespace JSXElements {
-    export interface NxtImageCompareAttributes extends HTMLAttributes {
+    export interface FitImageCompareAttributes extends HTMLAttributes {
       modified?: string;
       original?: string;
     }
