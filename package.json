@@ -1,6 +1,6 @@
 {
   "name": "fit-image-compare",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Image comparison slider component",
   "main": "dist/fitui.js",
   "types": "dist/types/index.d.ts",
