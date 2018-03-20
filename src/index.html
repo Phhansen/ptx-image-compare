@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
-
+  <title>NIX-UI Image comparison slider component</title>
+  <script src="/build/nixui.js"></script>
+  <style>
+    .main {
+      width: 500px;
+      height: 500px;
+      margin: 20%;
+    }
+  </style>
 </head>
+
 <body>
-
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
+  <main class="main">
+    <nxt-image-compare original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/751678/marioPhoto-2.jpg" modified="https://s3-us-west-2.amazonaws.com/s.cdpn.io/751678/marioPhoto-1.jpg"></nxt-image-compare>
+  </main>
 </body>
+
 </html>

@@ -20,31 +20,31 @@ declare global {
 
 
 import {
-  MyComponent as MyComponent
-} from './components/my-component/my-component';
+  NxtImageCompare as NxtImageCompare
+} from './components/nxt-image-compare/nxt-image-compare';
 
 declare global {
-  interface HTMLMyComponentElement extends MyComponent, HTMLStencilElement {
+  interface HTMLNxtImageCompareElement extends NxtImageCompare, HTMLStencilElement {
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLNxtImageCompareElement: {
+    prototype: HTMLNxtImageCompareElement;
+    new (): HTMLNxtImageCompareElement;
   };
   interface HTMLElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "nxt-image-compare": HTMLNxtImageCompareElement;
   }
   interface ElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "nxt-image-compare": HTMLNxtImageCompareElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-component": JSXElements.MyComponentAttributes;
+      "nxt-image-compare": JSXElements.NxtImageCompareAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      first?: string;
-      last?: string;
+    export interface NxtImageCompareAttributes extends HTMLAttributes {
+      modified?: string;
+      original?: string;
     }
   }
 }

@@ -1,0 +1,118 @@
+:host {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    --compare-primary-color: #366dc4;
+    --compare-secondary-color: #ffffff;
+    --compare-divider-width: 3px;
+}
+:host *,
+:host *:after,
+:host *:before {
+    box-sizing: inherit;
+}
+
+.img {
+    display: block;
+    box-sizing: border-box;
+}
+.img__original {
+    width: 100%;
+    height: auto;
+}
+.img__modified {
+
+}
+
+.resize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+.divider {
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -22px;
+    margin-top: -22px;
+
+    background-color: var(--compare-primary-color);
+    border: 3px solid var(--compare-primary-color);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.25);
+    -moz-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.25);
+    box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.25);
+    z-index: 40;
+    cursor: ew-resize;
+    box-sizing: border-box;
+}
+
+.divider:before,
+.divider:after {
+    content: " ";
+    display: block;
+    background: inherit;
+    position: absolute;
+    width: var(--compare-divider-width);
+    height: 9999px;
+    left: 50%;
+    margin-left: -1.5px;
+    z-index: 30;
+    -webkit-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.25);
+    -moz-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.25);
+    box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.25);
+    box-sizing: border-box;
+}
+.divider:before {
+    margin-bottom: 19px;
+    bottom: 50%;
+}
+.divider:after {
+    margin-top: 19px;
+    top: 50%;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-top: -6px;
+    margin-left: -15px;
+    border: 6px inset transparent;
+    border-right: 6px solid var(--compare-secondary-color);
+    transition: margin 200ms ease-in-out;
+}
+.draggable .left-arrow {
+    margin-left: -17px;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    margin-top: -6px;
+    margin-right: -15px;
+    border: 6px inset transparent;
+    border-left: 6px solid var(--compare-secondary-color);
+    transition: margin 200ms ease-in-out;
+}
+.draggable .right-arrow {
+    margin-right: -17px;
+}

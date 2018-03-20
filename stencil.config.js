@@ -1,5 +1,5 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'nixui',
   generateDistribution: true,
   serviceWorker: false
 };
