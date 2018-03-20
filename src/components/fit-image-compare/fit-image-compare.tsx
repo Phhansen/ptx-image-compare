@@ -93,7 +93,9 @@ export class FitImageCompare {
       const maxLeft = containerOffset + containerWidth - 2;
 
       const moveSlider = (event: Event) => {
-        !this.isTouched && event.preventDefault(); // Prevent selecting the images
+        if ( !this.isTouched ) {
+          event.preventDefault(); // Prevent selecting the images
+        }
         let pageX = this.getPageX(event);
 
         if (pageX !== false) {
