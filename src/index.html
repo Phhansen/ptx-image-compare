@@ -4,21 +4,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>FIT-UI Image comparison slider component</title>
-  <link rel="stylesheet" href="/build/fitui.css">
-  <script src="/build/fitui.js"></script>
+  <title>Image comparison slider web component</title>
+  <link rel="stylesheet" href="/build/ptx-image-comparison.css">
+  <script src="/build/ptx-image-comparison.js"></script>
   <style>
     .main {
       width: 500px;
       height: 500px;
       margin: 5% 20%;
     }
+
+    .image-comparison {
+      width: 350px;
+    }
   </style>
 </head>
 
 <body>
   <main class="main">
-    <fit-image-compare original="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/foer-oversigt.png" modified="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/efter-oversigt.png"></fit-image-compare>
+    <ptx-image-comparison class="image-comparison" original="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/foer-oversigt.png"
+      modified="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/efter-oversigt.png"></ptx-image-comparison>
   </main>
 </body>
 

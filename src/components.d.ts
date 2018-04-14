@@ -3,6 +3,9 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+
+import '@stencil/core';
+
 declare global {
   namespace JSX {
     interface Element {}
@@ -21,32 +24,56 @@ declare global {
 }
 
 
-import {
-  FitImageCompare as FitImageCompare
-} from './components/fit-image-compare/fit-image-compare';
-
 declare global {
-  interface HTMLFitImageCompareElement extends FitImageCompare, HTMLStencilElement {
+
+  namespace StencilComponents {
+    interface PtxImageComparison {
+      /**
+       * Sets the color of the draggable handle 
+       */
+      'dividerColor': string;
+      /**
+       * Path to modified image src
+       */
+      'modified': string;
+      /**
+       * Path to original image src
+       */
+      'original': string;
+    }
   }
-  var HTMLFitImageCompareElement: {
-    prototype: HTMLFitImageCompareElement;
-    new (): HTMLFitImageCompareElement;
+
+  interface HTMLPtxImageComparisonElement extends StencilComponents.PtxImageComparison, HTMLStencilElement {}
+
+  var HTMLPtxImageComparisonElement: {
+    prototype: HTMLPtxImageComparisonElement;
+    new (): HTMLPtxImageComparisonElement;
   };
   interface HTMLElementTagNameMap {
-    "fit-image-compare": HTMLFitImageCompareElement;
+    'ptx-image-comparison': HTMLPtxImageComparisonElement;
   }
   interface ElementTagNameMap {
-    "fit-image-compare": HTMLFitImageCompareElement;
+    'ptx-image-comparison': HTMLPtxImageComparisonElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "fit-image-compare": JSXElements.FitImageCompareAttributes;
+      'ptx-image-comparison': JSXElements.PtxImageComparisonAttributes;
     }
   }
   namespace JSXElements {
-    export interface FitImageCompareAttributes extends HTMLAttributes {
-      modified?: string;
-      original?: string;
+    export interface PtxImageComparisonAttributes extends HTMLAttributes {
+      /**
+       * Sets the color of the draggable handle 
+       */
+      'dividerColor'?: string;
+      /**
+       * Path to modified image src
+       */
+      'modified'?: string;
+      /**
+       * Path to original image src
+       */
+      'original'?: string;
     }
   }
 }

@@ -1,11 +1,15 @@
-import { Component, Prop, Element, Listen } from "@stencil/core";
+import { Component, Prop, Element, Listen, State, Watch } from "@stencil/core";
 
 @Component({
-  tag: "fit-image-compare",
-  styleUrl: "fit-image-compare.css",
+  tag: "ptx-image-comparison",
+  styleUrl: "ptx-image-comparison.css",
   shadow: true
 })
 export class FitImageCompare {
+
+  /** Internal state of the divider color, used for re-rendering when color changes */
+  @State() color: string;
+
   /**
    * Path to original image src
    */
@@ -16,41 +20,23 @@ export class FitImageCompare {
    */
   @Prop() modified: string;
 
+
+  /** Sets the color of the draggable handle */
+  @Prop() dividerColor: string = "#383838";
+
   // Host element
   @Element() el: HTMLElement;
 
-  /**
-   * The draggable handle
-   */
+  /** The draggable handle element */
   handleElement: HTMLElement;
 
-  /**
-   * Resize element container containing the modified image
-   */
+  /** Resize element container containing the modified image */
   resizeElement: HTMLElement;
 
   /**
    * `<img />` tag for the modified image
    */
   resizeImage: HTMLImageElement;
-
-  /**
-   * If touch is used
-   */
-  isTouched: boolean = false;
-
-  /**
-   * True if passive event listeners are supported by the browser
-   */
-  passiveSupported = false;
-
-  /**
-   * Listen for touchstart in order to prevent imageSelection with mouseMove
-   */
-  @Listen("window:touchstart")
-  touch() {
-    this.isTouched = true;
-  }
 
   /**
    * We hook up to the window resize event in order to adjust the size of the modified image
@@ -60,6 +46,13 @@ export class FitImageCompare {
     this.resizeImage.width = this.el.clientWidth;
   }
 
+  @Watch("dividerColor")
+  changeColorHandler(newValue: string, oldValue: string) {
+    if (newValue !== oldValue) {
+      this.color = newValue;
+    }
+  }
+
   componentDidLoad() {
     this.handleElement = this.el.shadowRoot.querySelector(".divider");
     this.resizeElement = this.el.shadowRoot.querySelector(".resize");
@@ -67,6 +60,9 @@ export class FitImageCompare {
 
     // Set initial image width
     this.resizeImage.width = this.el.clientWidth;
+
+    // Set initial color
+    this.color = this.dividerColor;
 
     // Setup eventlisteners and initialize the comparison slider
     this.init();
@@ -93,18 +89,15 @@ export class FitImageCompare {
       const maxLeft = containerOffset + containerWidth;
 
       const moveSlider = (event: Event) => {
-        if ( !this.isTouched ) {
-          event.preventDefault(); // Prevent selecting the images
-        }
         let pageX = this.getPageX(event);
 
         if (pageX !== false) {
-          let leftValue = pageX + posX - handleWidth + 1;
+          let leftValue = pageX + posX - handleWidth;
 
           if (pageX < minLeft) {
-            leftValue = -(handleWidth / 2) + 3;
+            leftValue = -handleWidth;
           } else if (pageX > maxLeft) {
-            leftValue = containerWidth - handleWidth / 2 + 1;
+            leftValue = containerWidth - handleWidth;
           }
 
           moveWidth = (leftValue + handleWidth / 2) * 100 / this.el.offsetWidth + "%";
@@ -149,16 +142,18 @@ export class FitImageCompare {
     }
   }
 
-  /**
-   * Render component contents
-   */
   render() {
+
+    const style = {
+      backgroundColor: this.color
+    }
+
     return [
       <img class="img img__original" src={this.original} />,
       <div class="resize">
         <img class="img img__modified" src={this.modified} />
       </div>,
-      <div class="divider">
+      <div class="divider" style={style}>
         <span class="arrow arrow__left" />
         <span class="arrow arrow__right" />
       </div>

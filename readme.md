@@ -33,15 +33,9 @@ Preview
 ![Preview](https://media.giphy.com/media/2w4NSDd4GGmjR6K2RX/giphy.gif)
 
 ```html
-<fit-image-compare original="path/to/original-image.png" modified="path/to/modified-image.png"></fit-image-compare>
+<ptx-image-comparison original="path/to/original-image.png" modified="path/to/modified-image.png" divider-color="#000"></ptx-image-comparison>
 ```
 
-## Custom colors
+## Change color of the divider & handle
 
-You can change the color of the slider handle and the arrows using css variables.
-
-Variables: 
-```css
-    --compare-primary-color: #366dc4;
-    --compare-secondary-color: #ffffff;
-```
+You can change the color of the slider handle and the arrows using the `divider-color` attribute.
