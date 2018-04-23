@@ -1,6 +1,6 @@
 {
   "name": "ptx-image-comparison",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Image comparison slider component",
   "main": "dist/ptx-image-comparison.js",
   "types": "dist/types/index.d.ts",
