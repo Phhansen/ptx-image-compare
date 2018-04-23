@@ -89,15 +89,19 @@ export class FitImageCompare {
       const maxLeft = containerOffset + containerWidth;
 
       const moveSlider = (event: Event) => {
+
+        // Prevent selecting the image on drag
+        event.type === "mousemove" && event.preventDefault();
+
         let pageX = this.getPageX(event);
 
         if (pageX !== false) {
           let leftValue = pageX + posX - handleWidth;
 
           if (pageX < minLeft) {
-            leftValue = -handleWidth;
+            leftValue = -(handleWidth / 2) + 1;
           } else if (pageX > maxLeft) {
-            leftValue = containerWidth - handleWidth;
+            leftValue = containerWidth - (handleWidth / 2);
           }
 
           moveWidth = (leftValue + handleWidth / 2) * 100 / this.el.offsetWidth + "%";
@@ -145,8 +149,9 @@ export class FitImageCompare {
   render() {
 
     const style = {
-      backgroundColor: this.color
-    }
+      backgroundColor: this.color,
+      borderColor: this.color
+    };
 
     return [
       <img class="img img__original" src={this.original} />,
