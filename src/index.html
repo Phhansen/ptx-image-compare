@@ -8,22 +8,56 @@
   <link rel="stylesheet" href="/build/ptx-image-comparison.css">
   <script src="/build/ptx-image-comparison.js"></script>
   <style>
-    .main {
-      width: 500px;
-      height: 500px;
-      margin: 5% 20%;
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
     }
 
-    .image-comparison {
-      width: 350px;
+    .main {
+      width: 100%;
+      min-height: 500px;
+    }
+
+    .image-comparison-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 5%;
+    }
+
+    .image-comparison-block .image-comparer {
+      flex: 1;
+      margin: 20px 0;
+      max-width: 400px;
+    }
+
+    @media only screen and (min-width: 640px) {
+      .image-comparison-block {
+        flex-direction: row;
+      }
+      .image-comparison-block .image-comparer {
+        margin: 0 20px;
+      }
     }
   </style>
 </head>
 
 <body>
   <main class="main">
-    <ptx-image-comparison class="image-comparison" divider-color="#759d3f" original="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/foer-oversigt.png"
-      modified="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/efter-oversigt.png"></ptx-image-comparison>
+
+    <div class="image-comparison-block">
+      <ptx-image-comparison class="image-comparer" divider-color="#759d3f" original="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/foer-oversigt.png"
+        modified="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/efter-oversigt.png"></ptx-image-comparison>
+
+      <ptx-image-comparison class="image-comparer" original="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/foer-oversigt.png"
+        modified="http://hungry.awardsquad.dk/wp-content/uploads/2018/03/efter-oversigt.png"></ptx-image-comparison>
+    </div>
+
   </main>
 </body>
 
