@@ -41,12 +41,10 @@
     border: 3px solid;
     border-radius: 50%;
     box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.25);
-    z-index: 40;
     cursor: ew-resize;
 }
 .divider:before,
 .divider:after {
-    z-index: 30;
     content: " ";
     position: absolute;
     display: block;

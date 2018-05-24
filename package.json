@@ -2,13 +2,13 @@
   "name": "ptx-image-comparison",
   "version": "2.0.1",
   "description": "Image comparison slider component",
-  "main": "dist/ptx-image-comparison.js",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
-  "browser": "dist/ptx-image-comparison.js",
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
@@ -18,16 +18,16 @@
     "test.watch": "jest --watch --no-cache"
   },
   "dependencies": {
-    "@stencil/core": "^0.7.25",
+    "@stencil/core": "^0.9.4",
     "@stencil/postcss": "0.0.4",
-    "autoprefixer": "^8.3.0",
+    "autoprefixer": "^8.5.0",
     "semver": "^5.5.0"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
     "@stencil/utils": "latest",
     "@types/jest": "^22.2.3",
-    "jest": "^22.4.3"
+    "jest": "^22.4.4"
   },
   "repository": {
     "type": "git",

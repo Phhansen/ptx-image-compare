@@ -3,7 +3,6 @@ const autoprefixer = require("autoprefixer");
 
 exports.config = {
   namespace: "ptx-image-comparison",
-  globalStyle: "src/global/variables.css",
   plugins: [
     postcss({
       plugins: [autoprefixer()]
@@ -13,9 +12,6 @@ exports.config = {
     {
       type: "dist",
       serviceWorker: false,
-    },
-    {
-      type: "www"
     }
   ]
 };
